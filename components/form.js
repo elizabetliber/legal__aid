@@ -54,7 +54,7 @@ export default function Form() {
                         setMessage(e.target.value)
                     }}/>
                 </form>
-                <input type='submit' onClick={(e) => {
+                <input type='submit' className="button" onClick={(e) => {
                     handleSubmit(e)
                 }}/>
             </ form>

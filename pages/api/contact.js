@@ -1,17 +1,19 @@
-require('dotenv').config()
-export default function (req, res) {
+
+export default function main (req, res) {
+    require('dotenv').config()
     let nodemailer = require('nodemailer')
+    let testAccount = nodemailer.createTestAccount();
     const transporter = nodemailer.createTransport({
         port: 465,
-        host: "smtp.gmail.com",
+        host: "smtp.ethereal.email",
         auth: {
-            user: 'demo email',
-            pass: process.env.password,
+            user: testAccount.user, // generated ethereal user
+            pass: testAccount.pass,
         },
         secure: true,
     })
     const mailData = {
-        from: 'demo email',
+        from: 'elizabet.liber@gmail.com',
         to: 'lieselliber@gmail.com',
         subject: `Message From ${req.body.name}`,
         text: req.body.message + " | Sent from: " + req.body.email,
