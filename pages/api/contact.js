@@ -1,6 +1,7 @@
 
-export default function main (req, res) {
+export default async function (req, res) {
     require('dotenv').config()
+    res.end(JSON.stringify(response))
     let nodemailer = require('nodemailer')
     let testAccount = nodemailer.createTestAccount();
     const transporter = nodemailer.createTransport({

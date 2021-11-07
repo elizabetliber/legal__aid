@@ -1,4 +1,7 @@
-const mail = require('@sendgrid/mail')
+const mail = require('@sendgrid/mail');
+
+mail.setApiKey(process.env.SENDGRID_API_KEY);
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function (req, res) {
     const body = JSON.parse(req.body)
 
@@ -9,8 +12,8 @@ export default function (req, res) {
     `;
 
     const data = {
-        to: 'elizabet.liber@gmail.com',
-        from: 'lieselliber@gmail.com',
+        to: 'lieselliber@gmail.com',
+        from: 'elizabet.liber@gmail.com',
         subject: "New web form message",
         text: message,
         html: message.replace(/\r\n/g, '<br>')

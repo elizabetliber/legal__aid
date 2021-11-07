@@ -36,6 +36,28 @@ export default function Form() {
     return (
         <div className={styles.container}>
             <form className={styles.main}>
+                <style jsx>{`
+              label {
+                display: block;
+                margin-bottom: .2em;
+              }
+
+              textarea {
+                border: 1px solid #110b0b;
+              }
+
+              input {
+                border: 1px solid #110b0b;
+              }
+
+              button {
+                color: white;
+                background-color: aqua;
+                padding: .8em 1em;
+                border: 0;
+                border-radius: .2em;
+              }
+            `}</style>
                 <form className={styles.inputGroup}>
                     <label htmlFor='name'> Имя </label>
                     <input type='text' name='name' className={styles.inputField} onChange={(e) => {
