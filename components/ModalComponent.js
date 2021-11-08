@@ -21,7 +21,22 @@ export default function ModalComponent() {
 
     return (
         <>
-            <Button onClick={onOpen} colorScheme="teal.700" variant="outline" width="230px" mt={5}>КОНСУЛЬТАЦИЯ</Button>
+            <Button onClick={onOpen} bg="teal.500"
+                    color="white"
+                    borderWidth={1}
+                    borderStyle={'solid'}
+                    borderColor={"blackAlpha.500"}
+                    _hover={{bg: "teal.700", borderColor: "teal.700"}}
+                    variant="outline"
+                    width="190px"
+                    pl={7}
+                    pr={7}
+                    pt={6}
+                    pb={6}
+                    mt={14}
+            >
+                КОНСУЛЬТАЦИЯ
+            </Button>
 
             <Modal
                 initialFocusRef={initialRef}

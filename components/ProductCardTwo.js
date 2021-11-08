@@ -1,46 +1,43 @@
-import Image from 'next/image';
 import {
+    Heading,
+    Avatar,
     Box,
     Center,
-    Heading,
     Text,
     Stack,
-    Avatar,
+    Button,
+    Link,
+    Badge,
     useColorModeValue,
 } from '@chakra-ui/react';
 
-export default function ProductCardTwo({imgSrc, title}) {
+export default function ProductCardTwo({imgSrc ,title, text}) {
     return (
-        <Center p={{sm: 1, md: 3, lg: 4}}>
+        <Center py={6}>
             <Box
-                maxW={'445px'}
+                maxW={'320px'}
                 w={'full'}
                 bg={useColorModeValue('white', 'gray.900')}
                 boxShadow={'2xl'}
-                rounded={'md'}
-                p={3}
-                overflow={'hidden'}>
-                <Box
-                    h={'210px'}
-                    bg={'gray.100'}
-                    mt={-6}
-                    mx={-6}
-                    mb={7}
+                rounded={'lg'}
+                p={6}
+                textAlign={'center'}>
+                <Avatar
+                    size={'2xl'}
+                    src={imgSrc}
+                    alt={'Avatar Alt'}
+                    mb={4}
                     pos={'relative'}
-                >
-                    <Image
-                        src={imgSrc}
-                        layout={'fill'}
-                    />
-                </Box>
-                <Stack>
-                    <Heading
-                        color={useColorModeValue('gray.700', 'white')}
-                        fontSize={'lg'}
-                        fontFamily={'body'}>
-                        {title}
-                    </Heading>
-                </Stack>
+                />
+                <Heading fontSize={'2xl'} fontFamily={'body'}>
+                    {title}
+                </Heading>
+                <Text
+                    textAlign={'center'}
+                    color={useColorModeValue('gray.700', 'gray.400')}
+                    px={3}>
+                    {text}
+                </Text>
             </Box>
         </Center>
     );

@@ -1,11 +1,8 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
-import {servicesOne} from "../pages/api/services";
-import {servicesTwo} from "../pages/api/services";
-import {servicesThree} from "../pages/api/services";
-import {servicesFour} from "../pages/api/services";
-import ProductCard from "./ProductCard";
+import ProductCardTwo from "./ProductCardTwo";
 import {Box, Heading, Text} from "@chakra-ui/react";
+import {reviews} from "../pages/api/reviews";
 
 
 function SampleNextArrow() {
@@ -24,14 +21,15 @@ function SamplePrevArrow() {
     );
 }
 
+
 class Carousel extends Component {
     render() {
         let settings = {
             dots: true,
             infinite: true,
             speed: 700,
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             initialSlide: 0,
             prevArrow: <SamplePrevArrow/>,
             nextArrow: <SampleNextArrow/>,
@@ -81,40 +79,13 @@ class Carousel extends Component {
                     mt={6}
                     mb={3}
                 >
-                    Наши услуги
+                    Наши отзывы
                 </Text>
                 <Slider {...settings}>
-                    {servicesOne.map((service, index) => {
+                    {reviews.map((review, index) => {
                         return (
-                            <div key={index}>
-                                <ProductCard imgSrc={service.image} title={service.title}/>
-                            </div>
-                        );
-                    })}
-                </Slider>
-                <Slider {...settings}>
-                    {servicesTwo.map((service, index) => {
-                        return (
-                            <div key={index}>
-                                <ProductCard imgSrc={service.image} title={service.title}/>
-                            </div>
-                        );
-                    })}
-                </Slider>
-                <Slider {...settings}>
-                    {servicesThree.map((service, index) => {
-                        return (
-                            <div key={index}>
-                                <ProductCard imgSrc={service.image} title={service.title}/>
-                            </div>
-                        );
-                    })}
-                </Slider>
-                <Slider {...settings}>
-                    {servicesFour.map((service, index) => {
-                        return (
-                            <div key={index}>
-                                <ProductCard imgSrc={service.image} title={service.title}/>
+                            <div key={index} style={{marginTop: "25px"}}>
+                                <ProductCardTwo imgSrc={review.img} title={review.title} text={review.text}/>
                             </div>
                         );
                     })}
