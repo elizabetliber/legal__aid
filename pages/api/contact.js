@@ -1,4 +1,14 @@
 import sendEmail from './../../lib/mail';
+const express = require('express');
+const bodyParser = require('body-parser')
+const cors = require('cors');
+
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
+
+
 
 export default async function handler(req, res) {
     const message = {
