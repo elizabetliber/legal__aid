@@ -23,7 +23,7 @@ export default function ModalComponent() {
     async function sendForm() {
 
         try {
-            await axios.post('http://localhost:3000/api/contact', {
+            await axios.post('/api/contact', {
                 name, phone, email, message
             });
 
