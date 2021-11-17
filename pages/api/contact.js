@@ -8,19 +8,12 @@ app.get('/with-cors', cors(), (req, res, next) => {
 })
 
 app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", 'http://localhost:3000');
+    res.setHeader("Access-Control-Allow-Origin",'https://legal-aid-liard.vercel.app/');
     res.setHeader("Access-Control-Allow-Credentials","true");
     res.setHeader("Access-Control-Expose-Headers", "Set-Cookie");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-xsrf-token, X-Requested-With, Accept, Expires, Last-Modified, Cache-Control");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, DELETE");
     next();
-});
-app.configure('development', 'production', function() {
-    app.use(express.csrf());
-    app.use(function(req, res, next) {
-        res.cookie('XSRF-TOKEN', req.csrfToken());
-        next();
-    });
 });
 
 
