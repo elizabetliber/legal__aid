@@ -1,12 +1,11 @@
 import sendEmail from './../../lib/mail';
-const express = require('express');
-const bodyParser = require('body-parser')
-const cors = require('cors');
+const express = require('express')
+const cors = require('cors')
+const app = express()
 
-const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors());
+app.get('/with-cors', cors(), (req, res, next) => {
+    res.json({ msg: 'WHOAH with CORS it works!  ' })
+})
 
 
 
