@@ -31,7 +31,7 @@ export default function ModalComponent() {
             setPhone('');
             setEmail('');
             setMessage('');
-
+            console.log(name, phone, email, message);
         } catch (error) {
             console.log('Sending error', error);
         }

@@ -12,6 +12,6 @@ export default async function handler(req, res) {
         `,
     };
     sendEmail(message);
-    console.log(message);
+    console.log(`BEFORE RESPONSE ${JSON.stringify(res)}`);
     res.send(`Спасибо за заявку, ${req.body.name}!`);
 }
