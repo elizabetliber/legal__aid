@@ -11,9 +11,9 @@ import {
 
 export default function ProductCard({imgSrc, title}) {
     return (
-        <Center p={{sm: 1, md: 3, lg: 4}}>
+        <Center p={{sm: 1, md: 4, lg: 4}}>
             <Box
-                maxW={'445px'}
+                maxW={'270px'}
                 w={'full'}
                 bg={useColorModeValue('white', 'gray.900')}
                 boxShadow={'2xl'}
@@ -21,9 +21,9 @@ export default function ProductCard({imgSrc, title}) {
                 p={3}
                 overflow={'hidden'}>
                 <Box
-                    h={'210px'}
+                    h={'190px'}
                     bg={'gray.100'}
-                    mt={-6}
+                    mt={1}
                     mx={-6}
                     mb={7}
                     pos={'relative'}

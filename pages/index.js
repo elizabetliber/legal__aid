@@ -1,11 +1,9 @@
 import Header from "../components/Header";
 import {TextComponent} from "../components/TextComponent";
-import Form from "../components/form"
 import Head from "next/head";
 import Carousel from "../components/Carousel";
 import {TextComponentTwo} from "../components/TextComponentTwo";
 import CarouselTwo from "../components/CarouselTwo";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 
 export default function Index() {
@@ -28,9 +26,8 @@ export default function Index() {
             <Header/>
             <TextComponent/>
             <Carousel/>
-            <TextComponentTwo/>
             <CarouselTwo/>
-            <Form/>
+            <TextComponentTwo/>
         </>
     )
 }
