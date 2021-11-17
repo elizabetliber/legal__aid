@@ -3,10 +3,6 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
-app.get('/with-cors', cors(), (req, res, next) => {
-    res.json({ msg: 'WHOAH with CORS it works!  ' })
-})
-
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin",'https://legal-aid-liard.vercel.app/');
     res.setHeader("Access-Control-Allow-Credentials","true");
