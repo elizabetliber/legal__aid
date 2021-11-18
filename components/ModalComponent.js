@@ -21,7 +21,6 @@ export default function ModalComponent() {
 
 
     async function sendForm() {
-
         try {
             await axios.post('/api/contact', {
                 name, phone, email, message
@@ -31,11 +30,16 @@ export default function ModalComponent() {
             setPhone('');
             setEmail('');
             setMessage('');
-            console.log(name, phone, email, message);
+
         } catch (error) {
             console.log('Sending error', error);
         }
-
+        alert("Форма отправлена")
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+        onClose()
     }
 
     const [name, setName] = useState('');
@@ -53,10 +57,7 @@ export default function ModalComponent() {
                 _hover={{bg: "teal.700", borderColor: "teal.700"}}
                 variant="outline"
                 width="190px"
-                pl={7}
-                pr={7}
-                pt={6}
-                pb={6}
+                height="48px"
                 mt={12}
             >
                 КОНСУЛЬТАЦИЯ
@@ -94,7 +95,7 @@ export default function ModalComponent() {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button bg="teal.400" color="white" type='button' mr={3} onClick={sendForm}>Отправить
+                        <Button bg="teal.400" color="white" mr={3} onClick={sendForm}>Отправить
                         </Button>
                     </ModalFooter>
                 </ModalContent>

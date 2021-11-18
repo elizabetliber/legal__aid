@@ -11,21 +11,22 @@ import {
 
 export default function ProductCard({imgSrc, title}) {
     return (
-        <Center p={{sm: 1, md: 4, lg: 4}}>
+        <Center p={{base: 4, sm: 4, md: 3.5, lg: 3.5}}>
             <Box
-                maxW={'270px'}
+                maxW={{base: "270px", sm: "255px", md: "270px", lg: "270px", xl: "270px", "2xl": "270px"}}
                 w={'full'}
                 bg={useColorModeValue('white', 'gray.900')}
-                boxShadow={'2xl'}
-                rounded={'md'}
+                borderWidth="1px"
+                borderColor="gray.200"
+                rounded="lg"
+                shadow="lg"
                 p={3}
                 overflow={'hidden'}>
                 <Box
-                    h={'190px'}
+                    h={{base: "180px", sm: "170px", md: "190px", lg: "190px", xl: "190px", "2xl": "190px"}}
                     bg={'gray.100'}
-                    mt={1}
+                    mt={-6}
                     mx={-6}
-                    mb={7}
                     pos={'relative'}
                 >
                     <Image
@@ -33,10 +34,10 @@ export default function ProductCard({imgSrc, title}) {
                         layout={'fill'}
                     />
                 </Box>
-                <Stack>
+                <Stack pb={1.5} pt={3.5} textAlign={"center"}>
                     <Heading
                         color={useColorModeValue('gray.700', 'white')}
-                        fontSize={'lg'}
+                        fontSize={"17px"}
                         fontFamily={'body'}>
                         {title}
                     </Heading>

@@ -5,7 +5,7 @@ import {servicesTwo} from "../pages/api/services";
 import {servicesThree} from "../pages/api/services";
 import {servicesFour} from "../pages/api/services";
 import ProductCard from "./ProductCard";
-import {Box, Heading, Text, Flex} from "@chakra-ui/react";
+import {Box, Text, Flex, Center} from "@chakra-ui/react";
 
 
 function SampleNextArrow(props) {
@@ -31,17 +31,6 @@ function SamplePrevArrow(props) {
 }
 
 class Carousel extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.next = this.next.bind(this);
-    //     this.previous = this.previous.bind(this);
-    // }
-    // next() {
-    //     this.slider.slickNext();
-    // }
-    // previous() {
-    //     this.slider.slickPrev();
-    // }
     render() {
         let settings = {
             dots: true,
@@ -93,13 +82,14 @@ class Carousel extends Component {
                 mb={5}
                 id="services"
             >
+
                 <Flex w="100%" justifyContent="center" alignItems="center">
                 <Text
                     fontSize={{base: "24px", md: "22px", lg: "30px"}}
                     fontFamily={'body'}
                     fontWeight={500}
                     mt={6}
-                    mb={3}
+                    mb={8}
                     textAlign="center"
                     borderBottomWidth={3}
                     borderStyle={'solid'}
@@ -109,7 +99,8 @@ class Carousel extends Component {
                     Наши услуги
                 </Text>
                 </Flex>
-                <Box textAlign={"center"}>
+                <Center>
+                <Box width={{base: "88%", sm: "97%", md: "94%", lg: "94%", xl: "94%", "2xl": "94%"}} marginLeft="1px">
                 <Slider {...settings}>
                     {servicesOne.map((service, index) => {
                         return (
@@ -119,7 +110,6 @@ class Carousel extends Component {
                         );
                     })}
                 </Slider>
-                </Box>
                 <Slider {...settings}>
                     {servicesTwo.map((service, index) => {
                         return (
@@ -147,6 +137,8 @@ class Carousel extends Component {
                         );
                     })}
                 </Slider>
+                </Box>
+                </Center>
             </Box>
         );
     }

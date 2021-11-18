@@ -1,8 +1,8 @@
-import {MdBuild, MdCall, MdQueryBuilder} from "react-icons/md"
-// import { useMediaQuery } from "@chakra-ui/react"
+import { MdCall, MdQueryBuilder} from "react-icons/md"
 import {extendTheme} from "@chakra-ui/react"
 import {createBreakpoints} from "@chakra-ui/theme-tools"
-import {Link} from "react-scroll"
+import {Link} from "react-scroll";
+import LinkNext from "next/link";
 import {
     Box,
     Stack,
@@ -84,13 +84,13 @@ const Header = (props) => {
                     <MdQueryBuilder size={24}/>
                     <Text ml={1} mt={0.5}>ПН-ПТ 9:00 - 18:00</Text>
                 </Box>
-                <Link href="tel:+79095170050" textDecoration="none">
+                <LinkNext href="tel:+79095170050" textDecoration="none">
                     <Button display={{md: "none", lg: "block"}} rightIcon={<MdCall/>}
                             variant="outline"
                             _hover={{bg: "teal.700", borderColor: "teal.700"}}>
                         +7-909-517-0050
                     </Button>
-                </Link>
+                </LinkNext>
             </Box>
 
         </Flex>

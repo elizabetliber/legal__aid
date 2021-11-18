@@ -4,7 +4,7 @@ import Head from "next/head";
 import Carousel from "../components/Carousel";
 import {TextComponentTwo} from "../components/TextComponentTwo";
 import CarouselTwo from "../components/CarouselTwo";
-
+import {Center, Flex} from "@chakra-ui/react";
 
 export default function Index() {
     return (
