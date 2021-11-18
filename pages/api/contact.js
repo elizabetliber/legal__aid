@@ -24,7 +24,6 @@ export default async function sendEmail(req, res) {
         `,
     };
     await new Promise((resolve, reject) => {
-        try {
             smtpTransport.sendMail(message, function (error, info) {
                 if (error) {
                     console.log(error);
@@ -33,10 +32,6 @@ export default async function sendEmail(req, res) {
                 }
                 smtpTransport.close();
             });
-            alert("Форма отправлена")
-        } catch (e){
-            alert(e.error)
-        }
 
     });
     res.send(`Спасибо за заявку, ${req.body.name}!`);
