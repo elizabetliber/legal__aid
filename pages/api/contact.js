@@ -24,10 +24,12 @@ export default async function sendEmail(req, res) {
         `,
     };
     await new Promise((resolve, reject) => {
+
             smtpTransport.sendMail(message, function (error, info) {
                 if (error) {
                     console.log(error);
                 } else {
+                    alert("Форма отправлена")
                     console.log("Email sent successfully", info);
                 }
                 smtpTransport.close();

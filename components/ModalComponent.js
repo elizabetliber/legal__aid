@@ -30,11 +30,10 @@ export default function ModalComponent() {
             setPhone('');
             setEmail('');
             setMessage('');
-
+            alert("Форма отправлена")
         } catch (error) {
             console.log('Sending error', error);
         }
-        alert("Форма отправлена")
         setName('');
         setPhone('');
         setEmail('');
